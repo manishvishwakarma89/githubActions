@@ -1,0 +1,29 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Print Message
+        run: echo "CI Pipeline Started"
+
+      - name: Install Dependencies
+        run: sudo apt update
+
+      - name: Build Project
+        run: echo "Building Application..."
+
+      - name: Run Tests
+        run: echo "Running Tests..."
+
+      - name: Deploy
+        run: echo "Deploying Application..."
