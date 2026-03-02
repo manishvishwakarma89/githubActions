@@ -1,15 +1,13 @@
-name: Hello World Workflow
-
-on: push
-
-jobs:
-  hello-job:
-    runs-on: nginx-latest
-
-    steps: 
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Print Hello World
-        run: echo "Hello, Manish Kumar Vishwakarma from GitHub Actions!
-        
+name: Hello
+on: null
+push:
+  branches:
+    - main
+jobs: null
+greet: null
+runs-on: ubuntu-latest
+steps:
+  - name: say hello to users
+    run: echo "Hello world"
+  - name: say hello to username
+    run: echo "Hello $USER"
