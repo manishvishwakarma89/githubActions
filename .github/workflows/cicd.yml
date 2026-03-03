@@ -41,7 +41,6 @@ jobs:
    if: inputs.environment == 'dev'
    needs: test
    steps:
-     - name: Deploy the Contaienr
-       run: echo "Deploy the container"
-
-  needs: code
+     - name: Deploy the Contaienr  run: echo "Deploy the container"
+       run: echo "docker compose up -d"
+       
