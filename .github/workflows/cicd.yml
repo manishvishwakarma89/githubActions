@@ -37,8 +37,9 @@ jobs:
               run: echo "Docker run/exec container"
     
     deploy:
+          if: inputs.environment == 'dev'
+          needs: [build,test]
           runs-on: ubuntu-latest
-          needs: test
           steps:
           - name: Deploy the container
             run: echo "Deploy the container using docker compose up -d"
