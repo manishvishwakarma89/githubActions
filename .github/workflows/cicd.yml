@@ -1,5 +1,5 @@
 # This defines the name of the workflow that appears in the GitHub Actions pipeline dashboard.
-name: CICD 
+name: CICD
 
 on:
     #This means the pipeline runs manually from GitHub UI.
@@ -38,6 +38,7 @@ jobs:
        
  deploy:
    runs-on: ubuntu-latest
+   if: inputs.environment == 'dev'
    needs: test
    steps:
      - name: Deploy the Contaienr
