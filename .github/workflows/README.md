@@ -1,5 +1,5 @@
 # GitHUb Actions: Zero to Hero
 
 # Workflows
-- [Hello] (.github/workflows/hello.yml)
-- [CICD Demo] (.github/workflows/cicd.yml)
+- [Hello](.github/workflows/hello.yml)
+- [CICD Demo](.github/workflows/cicd.yml)
