@@ -1,31 +1,35 @@
-# this is name of the workflow
+# Name of workflow
 name: CICD
 
-# Manual click
+# Trigger manually
 on:
   workflow_dispatch:
+
 jobs:
 
   code:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout code
+      - name: Checkout code
         run: echo "Code clone from GitHub"
+
   build:
     runs-on: ubuntu-latest
+    needs: code
     steps:
-        - name: Build docker container
-          run: echo "Docker container build"
+      - name: Build Docker container
+        run: echo "Docker container build"
+
   test:
     runs-on: ubuntu-latest
+    needs: build
     steps:
-       - name: Test the container
-         run: echo "Test the container"
+      - name: Test the container
+        run: echo "Test the container"
+
   deploy:
-        runs-on: ubuntu-latest
-        steps:
-        - name: Deploy the container
-          run: echo "Deploy docker compose the app"
-          
-  
-  
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Deploy the container
+        run: echo "Deploy docker compose the app"
