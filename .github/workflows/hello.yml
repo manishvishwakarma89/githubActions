@@ -1,8 +1,11 @@
-name: Manish Vishwakarma
+name: Hello
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+
+    paths:
+      - '**.html'
+      
 jobs:
   greet:
     runs-on: ubuntu-latest
